@@ -10,6 +10,5 @@ spec:
       endpointAddress: "localhost:4317"
       isSecure: false
       protocol: grpc
-
     zipkin:
       endpointAddress: "http://zipkin.default.svc.cluster.local:9411/api/v2/spans"
