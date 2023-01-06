@@ -1,21 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: backend-deploy
+  name: zipkin-deploy
+  namespace: flexcub-testing
   labels:
-    app: flextest
+    app: zipkintest
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: flextest
+      app: zipkintest
   template:
     metadata:
       labels:
-        app: flextest
+        app: zipkintest
     spec:
       containers:
-        - name: flextest
-          image: praveenraj10/app:2
+        - name: zipkintest
+          image: praveenraj10/zipkin:1.0
           ports:
             - containerPort: 80

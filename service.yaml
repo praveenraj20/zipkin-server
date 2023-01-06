@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: backend-deploy-svc
+  name: zipkin-deploy-svc
   namespace: flexcub-testing
 
 
@@ -9,12 +9,12 @@ status:
   loadBalancer: {}
 spec:
   ports:
-    - name: backend-deploy-svc
+    - name: zipkin-deploy-svc
       protocol: TCP
       port: 8080
       targetPort: 8080
   selector:
-    app: backend-deploy
+    app: zipkin-deploy
 
 
   type: ClusterIP
