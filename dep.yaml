@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend-deploy
+  labels:
+    app: flextest
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: flextest
+  template:
+    metadata:
+      labels:
+        app: flextest
+    spec:
+      containers:
+        - name: flextest
+          image: praveenraj10/app:2
+          ports:
+            - containerPort: 80
